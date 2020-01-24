@@ -1,1 +1,1 @@
-# npso2020
+Andrzej Duda działa cudaaa# npso2020
