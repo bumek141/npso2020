@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void liczenie();
+int kalkulator();
+
+int main()
+{
+    int liczba;
+    liczba = kalkulator(liczba);
+    liczenie(liczba);
+
+    return 0;
+}
+
+void liczenie (int x){
+
+    int a[256],j,i=0,y;
+
+    while (x>0){
+        y=(x%2);
+        a[i++]=y;
+        x=x/2;
+    }
+    for(j=i-1;j>=0; j--){
+        printf("%i",a[j]);
+    }
+
+    return;
+}
+
+int kalkulator(){
+
+    char kalkulator;
+    int liczba1, liczba2, operacja;
+    printf("Jaka operacje chcesz wykonac?\n& - AND\n| - OR\n^ - XOR\n~ - NOT\n-----------------\nWybor:");
+    scanf("%c", &kalkulator);
+
+    switch (kalkulator){
+        case '&':
+            printf("Operacja AND\n");
+            printf("Podaj pierwsza wartosc:");
+            scanf("%i",&liczba1);
+            printf("Podaj druga wartosc:");
+            scanf("%i",&liczba2);
+            operacja=liczba1&liczba2;
+            break;
+        case '|':
+            printf("Operacja OR\n");
+            printf("Podaj pierwsza wartosc:");
+            scanf("%i",&liczba1);
+            printf("Podaj druga wartosc:");
+            scanf("%i",&liczba2);
+            operacja=liczba1|liczba2;
+            break;
+        case '^':
+            printf("Operacja XOR\n");
+            printf("Podaj pierwsza wartosc:");
+            scanf("%i",&liczba1);
+            printf("Podaj druga wartosc:");
+            scanf("%i",&liczba2);
+            operacja=liczba1^liczba2;
+            break;
+        case '~':
+            printf("Operacja NOT\n");
+            printf("Podaj pierwsza wartosc:");
+            scanf("%i",&liczba1);
+            printf("Podaj druga wartosc:");
+            scanf("%i",&liczba2);
+            operacja=~liczba1;
+            break;
+        default:
+            printf("Nieprawidlowa wartosc.\n");
+            break;
+
+    return operacja;
+    }
+}
+
